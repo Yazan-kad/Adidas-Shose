@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient(#111,#222);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+    clip-path: circle(40% at right 70%);
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    width: 80%;
+    height: 80%; 
+    background-color:rgba(255, 255, 255,0.1);
+    border-radius: 20px;
+    padding: 15px;
+    overflow: hidden;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+nav .logo {
+    margin-left: 20px;
+    padding: 20px 0;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+nav .test ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+nav .test ul li a {
+    font-size: 18px;
+    font-weight: 500;
+}
+nav .test ul li a:hover, .active {
+    color: red;
+}
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+section .text {
+    color: white;
+    width: 40%;
+}
+section .text h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+section .text p {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 20px ;
+    letter-spacing: 1px;
+
+}
+section .image {
+    width: 40%;
+}
+section .image img {
+    width: 400px;
+}
+
+@media (min-width:950px) and (max-width:1150px) {
+    section .image img {
+        width: 330px;
+    }
+}
+@media (max-width:950px) {
+    section, nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    section .image,section .text {
+        width: 100%;
+    }
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
+}
+@media (max-width: 567px) {
+	section .image img {
+        width: 200px;
+    }
+    nav .test ul li {
+        margin: 0 4px;
+    }
+    section .text h2{
+        font-size: 25px;
+    }
+    section .text p {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0;
+    }
+}
